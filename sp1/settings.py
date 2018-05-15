@@ -62,12 +62,15 @@ ROBOTSTXT_OBEY = False
 #EXTENSIONS = {
 #    'scrapy.extensions.telnet.TelnetConsole': None,
 #}
+EXTENSIONS = {
+    'sp1.extensions.MyExtension': 200,
+}
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    'sp1.pipelines.Sp2Pipeline': 300,
-   'sp1.pipelines.Sp3Pipeline': 400,
+   # 'sp1.pipelines.Sp3Pipeline': 400,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -92,8 +95,7 @@ ITEM_PIPELINES = {
 HTTPERROR_ALLOWED_CODES = [403]
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 MMM = "user=xxx,host=xxx,port=3306"
-from scrapy.dupefilter import RFPDupeFilter
-DUPEFILTER_CLASS = 'scrapy.dupefilter.RFPDupeFilter'
-DUPEFILTER_DEBUG = False
-JOBDIR = "保存范文记录的日志路径，如：/root/"
+# DUPEFILTER_CLASS = 'scrapy.dupefilter.RFPDupeFilter'
+# DUPEFILTER_DEBUG = False
+# JOBDIR = "保存范文记录的日志路径，如：/root/"
 
