@@ -17,7 +17,7 @@ NEWSPIDER_MODULE = 'sp1.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'sp1 (+http://www.yourdomain.com)'
-
+USER_AGENT = ["Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; AcooBrowser; .NET CLR 1.1.4322; .NET CLR 2.0.50727)"]
 # Obey robots.txt rules
 # ROBOTSTXT_OBEY = True
 ROBOTSTXT_OBEY = False
@@ -65,9 +65,10 @@ ROBOTSTXT_OBEY = False
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'sp1.pipelines.Sp1Pipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'sp1.pipelines.Sp2Pipeline': 300,
+   'sp1.pipelines.Sp3Pipeline': 400,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
@@ -88,4 +89,11 @@ ROBOTSTXT_OBEY = False
 #HTTPCACHE_EXPIRATION_SECS = 0
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
+HTTPERROR_ALLOWED_CODES = [403]
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+MMM = "user=xxx,host=xxx,port=3306"
+from scrapy.dupefilter import RFPDupeFilter
+DUPEFILTER_CLASS = 'scrapy.dupefilter.RFPDupeFilter'
+DUPEFILTER_DEBUG = False
+JOBDIR = "保存范文记录的日志路径，如：/root/"
+

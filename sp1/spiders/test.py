@@ -77,16 +77,16 @@ for item in ul_list:
 
 # assert 1 == 2
 
-class A(object):
-    def foo1(self):
-        print("Hello", self)
-
-    @staticmethod
-    def foo2():
-        print("hello")
-
-    @classmethod
-    def foo3(clss):
-        print("hello", clss)
-
-A.foo3()
+# class A(object):
+#     def foo1(self):
+#         print("Hello", self)
+#
+#     @staticmethod
+#     def foo2():
+#         print("hello")
+#
+#     @classmethod
+#     def foo3(clss):
+#         print("hello", clss)
+#
+# A.foo3()

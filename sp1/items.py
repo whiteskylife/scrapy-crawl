@@ -8,7 +8,9 @@
 import scrapy
 
 
-class Sp1Item(scrapy.Item):
+class Sp2Item(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    pass
+    """负责结构化、规则化数据字段"""
+    url = scrapy.Field()
+    text = scrapy.Field()
